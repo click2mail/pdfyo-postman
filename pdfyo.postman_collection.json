@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "8c80910a-2cd8-4d55-bf5a-46f7e6987210",
+		"name": "pdfyo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5067635"
+	},
+	"item": [
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://stage.pdfyo.com/health",
+					"protocol": "https",
+					"host": [
+						"stage",
+						"pdfyo",
+						"com"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://stage.pdfyo.com/api/authping",
+					"protocol": "https",
+					"host": [
+						"stage",
+						"pdfyo",
+						"com"
+					],
+					"path": [
+						"api",
+						"authping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pdfgen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"html\": \"<html><head><style>.center {text-align:center;} .bigger {font-size:20px;}</style></head><body><div class='center bigger'>((mail__rtnName))<BR>((mail__rtnAddress1))<BR>((mail__rtnCity)), ((mail__rtnState)) ((mail__rtnZip))</div><BR><BR><BR>((date))<BR><BR>((Gym)), Manager<BR>((mail__address1))<BR>((mail__city)), ((mail__state)) ((mail__zip))<BR><BR>VIA CERTIFIED MAIL<BR><BR>RE: Membership ID {{ID#}}<BR><BR><BR><BR>Dear Sir or Madam:<BR><BR>Please cancel my membership to {{Gym}} immediately. DO NOT automatically renew my membership. I reserve the right to contact my credit card processor or bank to prevent any further charges after my cancellation date.<BR><BR>Thank you for your cooperation.<BR><BR>Very truly yours,<BR><BR><div style='font-size: 175%; font-family: cedarvillecursive;'>((mail__rtnName))</div><BR>((mail__rtnName))<BR>{{Phone#}}<BR>{{Email}}<BR></body></html>\",\n  \"fields\": {\"ID#\": \"0640515377\",\"Phone#\": \"(617) 455539\",\"Email\": \"jitendra.chandani@jivainfotech.com\",\"Gym\": \"Planet Fitness\"},\n  \"mail\": {\"organization\": \"Planet Fitness, Manager\",\n  \"address1\": \"560 El Dorado Boulevard\",\n  \"city\": \"Webster\",\n  \"state\": \"TX\",\n  \"zip\": \"77598\",\n  \"sendType\": \"Certified, Electronic Return Receipt\",\n  \"rtnName\": \"Kerry Flanagan-Owen\",\n  \"rtnAddress1\": \"1727 42ND AVE\",\n  \"rtnCity\": \"SAN FRANCISCO\",\n  \"rtnState\": \"CA\",\n  \"rtnZip\": \"94122\",\n  \"emailToo\": \"jitendra.chandani@jivainfotech.com\"},\n  \"email\": \"jitendra.chandani@jivainfotech.com\"\n}"
+				},
+				"url": {
+					"raw": "https://stage.pdfyo.com/api/pdfgen",
+					"protocol": "https",
+					"host": [
+						"stage",
+						"pdfyo",
+						"com"
+					],
+					"path": [
+						"api",
+						"pdfgen"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{password}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{username}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
